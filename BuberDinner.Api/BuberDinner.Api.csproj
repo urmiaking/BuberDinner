@@ -13,4 +13,10 @@
     <ProjectReference Include="..\BuberDinner.Infrastructure\BuberDinner.Infrastructure.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Middleware\" />
+    <Folder Include="Filters\" />
+    <Folder Include="Errors\" />
+  </ItemGroup>
+
 </Project>
