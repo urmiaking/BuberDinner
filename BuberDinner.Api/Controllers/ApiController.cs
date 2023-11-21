@@ -13,14 +13,19 @@ public class ApiController : ControllerBase
 
         var firstError = errors[0];
 
-        var statusCode = firstError.Type switch
+        var statusCode = GetStatusCode(firstError.Type);
+
+        return Problem(statusCode: statusCode, title: firstError.Description);
+    }
+
+    private static int GetStatusCode(ErrorType errorType)
+    {
+        return errorType switch
         {
             ErrorType.Conflict => StatusCodes.Status409Conflict,
             ErrorType.Validation => StatusCodes.Status400BadRequest,
             ErrorType.NotFound => StatusCodes.Status404NotFound,
             _ => StatusCodes.Status500InternalServerError,
         };
-
-        return Problem(statusCode: statusCode, title: firstError.Description);
     }
 }
