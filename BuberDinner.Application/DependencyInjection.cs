@@ -18,7 +18,3 @@ public static class DependencyInjection
         return services;
     }
 }
-
-internal class RegisterCommandValidator
-{
-}
