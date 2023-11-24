@@ -1,7 +1,7 @@
 using BuberDinner.Application.Authentication.Commands.Register;
 using BuberDinner.Application.Authentication.Queries.Login;
 using BuberDinner.Contracts.Authentication;
-using BuberDinner.Domain.Errors;
+using BuberDinner.Domain.Common.Errors;
 using MapsterMapper;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
@@ -31,9 +31,9 @@ public class AuthenticationController : ApiController
         return authResult.Match(authenticationResult =>
                 Ok(_mapper.Map<AuthenticationResponse>(authenticationResult)),
             Problem);
-
     }
 
+    // Handles the login request by validating the user's credentials and returning the authentication result.
     [HttpPost("login")]
     public async Task<IActionResult> Login(LoginRequest request)
     {

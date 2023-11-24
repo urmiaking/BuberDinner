@@ -7,7 +7,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Entities\" />
+    <Folder Include="Dinner\Entities\" />
+    <Folder Include="Host\Entites\" />
+    <Folder Include="MenuReview\Entities\" />
+    <Folder Include="MenuReview\ValueObjects\" />
+    <Folder Include="User\" />
     <Folder Include="Errors\" />
   </ItemGroup>
 
